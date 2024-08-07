@@ -11,7 +11,7 @@
 - Read the latest news headlines
 - Process general commands using OpenAI
 
-[Read more](https://github.com/sandip3/Python-Project/blob/master/Jarvis/Readme.md)
+[Read more](https://github.com/sandip3/Python-Project/blob/master/Jarvis%20AI/Readme.md)
 
 ---
 
