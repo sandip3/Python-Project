@@ -3,13 +3,10 @@ import webbrowser  # webbrowser = used to open and Operate browser
 import speech_recognition as sr
 import music_library
 import requests
-from openai import OpenAI  # paid
 from gtts import gTTS  # paid
 import pygame
 import os
-
-# defaults to getting the key using os.environ.get("OPENAI_API_KEY")
-# if you saved the key under a different environment variable name, you can do something like:
+import google.generativeai as genai  # Free
 
 # obtain audio from the microphone
 recognizer = sr.Recognizer()
@@ -21,6 +18,12 @@ engine = pyttsx3.init()
 newsapi = ""
 # it's api for news from "https://newsapi.org/"
 
+# Set your API key
+api_key = "YOUR_API_KEY"
+
+# Configure the Google Generative AI client
+genai.configure(api_key=api_key)
+
 
 def speke(text):
     # engine.say("")
@@ -28,7 +31,7 @@ def speke(text):
     engine.runAndWait()
 
 
-def new_speke(text):
+def New_speke(text):
     tts = gTTS(text)
 
     audio_file = "temp.mp3"
@@ -38,7 +41,7 @@ def new_speke(text):
 
     # Initialize the mixer module for audio
     pygame.mixer.init()
-    
+
     # Load and play the MP3 file
     pygame.mixer.music.load(audio_file)
     pygame.mixer.music.play()
@@ -54,29 +57,33 @@ def new_speke(text):
     pygame.quit()
 
 
-def aiProcess(command):
-    client = OpenAI(
-        api_key="",
-    )
-
+def generate_response(command):
     try:
-        completion = client.chat.completions.create(
-            model="gpt-3.5-turbo",
-            messages=[
-                {
-                    "role": "system",
-                    "content": "You are a virtual assistant named Jarvis skilled in general tasks like Alaxa and Google Cloude. Give pointwise, short and simple response.please",
-                },
-                {
-                    "role": "user",
-                    "content": command,
-                },
-            ],
+        # Create the model configuration
+        generation_config = {
+            "temperature": 1,
+            "top_p": 0.95,
+            "top_k": 64,
+            "max_output_tokens": 8192,
+            "response_mime_type": "text/plain",
+        }
+
+        # Initialize the model
+        model = genai.GenerativeModel(
+            model_name="gemini-1.5-flash",
+            generation_config=generation_config,
+            # safety_settings = Adjust safety settings
+            # See https://ai.google.dev/gemini-api/docs/safety-settings
         )
 
-        return completion.choices[0].message.content
+        # Generate content
+        response = model.generate_content(
+            f"You are a virtual assistant named Jarvis skilled in general tasks like Alexa and Google Cloud. Give pointwise, short, and simple responses, please. {command}"
+        )
 
-    except client.error.OpenAIError as e:
+        return response.text
+
+    except Exception as e:
         print(f"An error occurred: {e}")
         return None
 
@@ -130,7 +137,7 @@ def processCommand(x):
 
     else:
         # let OpenAI handle Reqest
-        output = aiProcess(data)
+        output = generate_response(data)
         speke(output)
 
 
