@@ -1,6 +1,6 @@
 # Projects Overview
 
-### 🤖 [Auto Replay AI](./Auto%20Replay%20AI/Readme.md)
+### 🤖 [Auto Replay AI](./Auto%20Reply%20AI%20Chatbot/Readme.md)
 
 ### Technology
 - 🖥️ **Language**: Python
@@ -10,11 +10,11 @@
 - Retrieve and analyze chat history.
 - Send automated replies using Google Generative AI.
 
-[Read more](https://github.com/sandip3/Python-Project/blob/master/Auto%20Replay%20AI/Readme.md)
+[Read more](https://github.com/sandip3/Python-Project/blob/master/Auto%20Reply%20AI%20Chatbot/Readme.md)
 
 ---
 
-### 🎲 [Number Guessing Game](./Number%20Guessing%20Game/Readme.md)
+### 🎲 [Number Guessing Game](./THE%20PERFECT%20GUESS/Readme.md)
 
 ### Technology
 - 🖥️ **Language**: Python
