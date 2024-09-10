@@ -15,23 +15,25 @@ recognizer = sr.Recognizer()
 engine = pyttsx3.init()
 # initialize pyttsx
 
-newsapi = ""
+# newsapi = "YOUR_API_KEY"
+newsapi = "edb22dc21eac4e6997dc2e55be3f9e83"
 # it's api for news from "https://newsapi.org/"
 
 # Set your API key
-api_key = "YOUR_API_KEY"
+# api_key = "YOUR_API_KEY"
+api_key = "AIzaSyCHmxNbVa0Y1qH2QaE4FPNd88hCHsfoADM"
 
 # Configure the Google Generative AI client
 genai.configure(api_key=api_key)
 
 
-def speke(text):
+def Old_speke(text):
     # engine.say("")
     engine.say(text)
     engine.runAndWait()
 
 
-def New_speke(text):
+def speke(text):
     tts = gTTS(text)
 
     audio_file = "temp.mp3"

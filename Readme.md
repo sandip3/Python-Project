@@ -14,6 +14,21 @@
 
 ---
 
+### 🤖 [Jarvis - A Virtual Assistant](./Jarvis%20AI/Readme.md)
+
+#### Technology
+- 🖥️ **Language**: Python
+
+#### Description
+- Opens websites like Google, GitHub, and YouTube.
+- Plays music from a predefined library.
+- Reads the latest news headlines.
+- Processes general commands using OpenAI.
+
+[Read more](https://github.com/sandip3/Python-Project/blob/master/Jarvis%20AI/Readme.md)
+
+---
+
 ### 🎲 [Number Guessing Game](./THE%20PERFECT%20GUESS/Readme.md)
 
 ### Technology

@@ -95,7 +95,7 @@ python3 main.py 2> >(grep -v 'ALSA lib' >&2)
     - `requests` for HTTP requests
     - `OpenAI` for processing commands (paid)
     - `Google Generative AI` for advanced AI capabilities (paid)
-- **Suppress ALSA Errors**: Use `python3 main.py 2> >(grep -v 'ALSA lib' >&2)`
+- **Suppress ALSA Errors**: Use `python3 main.py 2> >(grep -v 'ALSA lib' >&2)`czx
 
 ## Licensing 📜
 - Open-source. Contributions welcome!
