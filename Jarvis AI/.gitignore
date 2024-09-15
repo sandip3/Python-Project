@@ -1,7 +1,0 @@
-.gitignore
-
-News_api_key="edb22dc21eac4e6997dc2e55be3f9e83"
-# News API = https://newsapi.org/
-
-Gemini_API = "AIzaSyCHmxNbVa0Y1qH2QaE4FPNd88hCHsfoADM"
-# Gemini API = "https://aistudio.google.com/app/apikey"
